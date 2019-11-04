@@ -1,0 +1,36 @@
+version: "3"
+services:
+    app:
+        container_name: "simpleflaskapp"
+        build: ./app
+        links:
+            - mysqldb
+        networks:
+            my-network:
+                aliases:
+                    -   flask-app
+    mysqldb:
+        container_name: "simpleflaskapp_db"
+        image: mysql:5.7
+        networks:
+          -   my-network
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_USER: root
+            MYSQL_ROOT_PASSWORD: root
+        volumes:
+            -   ./db:/docker-entrypoint-initdb.d/:ro
+    nginx:
+          #container_name: "simpleflaskapp_nginx"
+          image: "nginx:1.13.5"
+          volumes:
+            -   ./nginx/app.conf:/etc/nginx/conf.d/default.conf
+          ports:
+            -   5000:8001
+          depends_on:
+            -   app
+          networks:
+            -   my-network
+networks:
+    my-network:

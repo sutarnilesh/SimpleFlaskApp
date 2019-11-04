@@ -1,0 +1,3 @@
+Flask
+mysql-connector
+uwsgi==2.0.18
