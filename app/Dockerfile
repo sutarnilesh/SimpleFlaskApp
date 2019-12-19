@@ -14,5 +14,4 @@ COPY . /app
 
 #RUN chmod +x start.sh
 
-#CMD ["bash", "start.sh"]
-CMD ["python", "app.py"]
+CMD ["bash", "start.sh"]
