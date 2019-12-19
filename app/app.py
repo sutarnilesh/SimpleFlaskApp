@@ -8,8 +8,8 @@ app = Flask(__name__)
 
 def favorite_colors() -> List[Dict]:
     config = {
-        'user': 'root',
-        'password': 'root',
+        'user': 'mysql',
+        'password': 'mysql',
         'host': 'mysqldb',
         'port': '3306',
         'database': 'knights'
