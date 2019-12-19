@@ -10,7 +10,7 @@ def favorite_colors() -> List[Dict]:
     config = {
         'user': 'mysql',
         'password': 'mysql',
-        'host': 'mysqldb',
+        'host': 'mysql',
         'port': '3306',
         'database': 'knights'
     }
