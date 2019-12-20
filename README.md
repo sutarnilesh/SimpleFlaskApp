@@ -11,3 +11,5 @@ curl -Lvk http://127.0.0.1:8001
 ```
 
 Note: I had taken a help from [here](https://medium.com/@shamir.stav_83310/dockerizing-a-flask-mysql-app-with-docker-compose-c4f51d20b40d) to make this more generic  
+
+Inlcuded files for openshift
