@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: mysqldb
+  name: mysqldb
+  namespace: myproject  
+spec:
+  containers:
+    -
+      env:
+        -
+          name: MYSQL_ROOT_PASSWORD
+          value: mysql
+        -
+          name: MYSQL_DATABASE
+          value: knights
+        -
+          name: MYSQL_USERNAME
+          value: mysql
+        -
+          name: MYSQL_PASSWORD
+          value: mysql     
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'mysqldb:latest'
+  runPolicy: Serial
+  source:
+    git:
+      ref: master
+      uri: 'https://github.com/sutarnilesh/SimpleFlaskApp.git'
+    type: Git
+  strategy:
+    dockerStrategy:
+      dockerfilePath: db/Dockerfile
+    type: Docker
+  triggers:
+    - github:
+        secret: 39d979c75bf3b77e
+      type: GitHub
