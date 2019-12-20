@@ -1,3 +1,6 @@
+CREATE USER 'mysql'@'%' IDENTIFIED BY 'mysql';
+GRANT ALL PRIVILEGES ON knights.* TO 'mysql'@'%';
+
 CREATE DATABASE IF NOT EXISTS knights;
 use knights;
 
