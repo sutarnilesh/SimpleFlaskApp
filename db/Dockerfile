@@ -1,5 +1,5 @@
 # Derived from official mysql image (our base image)
-FROM mysql:5.7
+FROM mysql:latest
 
 # Add a database
 ENV MYSQL_DATABASE knights
