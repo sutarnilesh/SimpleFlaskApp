@@ -2,6 +2,8 @@ FROM python:3.6
 
 MAINTAINER Nilesh Sutar "sutar.nilesh@gmail.com"
 
+RUN apt-get install stress
+
 EXPOSE 5000
 
 WORKDIR /src
