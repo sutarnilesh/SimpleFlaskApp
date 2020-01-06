@@ -2,7 +2,7 @@ FROM python:3.6
 
 MAINTAINER Nilesh Sutar "sutar.nilesh@gmail.com"
 
-RUN apt-get install stress
+RUN apt install stress
 
 EXPOSE 5000
 
