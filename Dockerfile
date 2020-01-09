@@ -18,6 +18,7 @@ RUN pip install -r requirements.txt
 
 COPY . /src
 
-#RUN chmod +x start.sh
+RUN chmod +x start.sh
 
-CMD ["python", "app/app.py"]
+#CMD ["python", "app/app.py"]
+CMD ["bash", "start.sh"]
