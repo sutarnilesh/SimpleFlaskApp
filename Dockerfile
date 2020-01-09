@@ -21,4 +21,4 @@ COPY . /src
 #RUN chmod +x start.sh
 
 #CMD ["python", "app/app.py"]
-CMD ["bash", "start.sh"]
+CMD ["bash", "app/start.sh"]
