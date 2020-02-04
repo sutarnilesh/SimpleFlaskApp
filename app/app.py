@@ -19,7 +19,6 @@ def favorite_colors() -> List[Dict]:
     cursor.execute('SELECT * FROM  favorite_colors')
     results = [{name: color} for name, color in cursor]
     results.append({"yellow": "Sean Boat"})
-    results.append({"red": "JB"})
     cursor.close()
     connection.close()
     return results
